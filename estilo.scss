@@ -1,0 +1,78 @@
+$font-main: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+$primary-color: orange;$bg-box: #f2f2f2;
+$bg-border: #c2c2c2;
+
+@use 'footer';
+@use 'sass:math';
+
+
+article{
+ul{
+display: flex;
+}
+li{
+display: flex;
+justify-content: center;
+align-items: center;
+display: flex;
+justify-content: space-between;
+flex-direction: column;
+background-color: $bg-box;
+border: 1px solid $bg-border;
+margin: 0 10px;
+padding: 5px;
+flex-basis: fit-content;
+max-width: math.div(300px, 960px) * 100%;
+}
+h3{
+font-family: $font-main;
+color: $primary-color;
+}
+}
+
+header{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $font-main;
+    color: $primary-color;
+}
+@mixin theme($theme: darkblue){
+    h3{
+    background: $theme;
+    box-shadow: 0 0 1px rgba($theme, .25);
+    color: #fff;
+    padding: 5px 10px;
+    }
+    }
+    .jquery{
+    @include theme;
+    }
+    .flexbox{
+    @include theme($theme: darkcyan);
+    }
+    .sass{
+    @include theme($theme: blueviolet)
+    }
+
+    $x: 15em;
+@debug $x;
+@debug 1 + 2 * 3 == 1 + (2 * 3); // true
+@debug true or false and false == true or (false and false); // true
+@debug (1 + 2) * 3; // 9
+@debug ((1 + 2) * 3 + 4) * 5; // 65
+@debug 100 > 50; // true
+@debug 10px < 17px; // true
+@debug 96px >= 1in; // true
+@debug 1000ms <= 1s; // true
+@debug 100 > 50px; // true
+@debug 10px < 17; // true
+@debug "Helvetica" + " Neue"; // "Helvetica Neue"
+@debug sans- + serif; // sans-serif
+@debug sans - serif; // sans-serif
+@debug not true; // false
+@debug not false; // true
+@debug true and true; // true
+@debug true and false; // false
+@debug true or false; // true
+@debug false or false; // false
+@debug math.min(930, 450); //450
